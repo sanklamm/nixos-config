@@ -25,7 +25,7 @@
   # boot.loader.systemd-boot.enable = true;
 
   # use ZFS
-  boot.supportedFilesystems = [ "zfs" ]
+  boot.supportedFilesystems = [ "zfs" ];
 
   networking.networkmanager.enable = true;
   networking.hostName = "sean"; # Define your hostname.
