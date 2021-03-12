@@ -1,0 +1,5 @@
+#+TITLE: My NixOS Config
+#+DATE: 2021-03-12
+
+** General info
+   This is just the first test. Let's see if I'll be getting somewhere...
