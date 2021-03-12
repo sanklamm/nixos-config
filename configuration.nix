@@ -24,6 +24,9 @@
   # UEFI boot
   # boot.loader.systemd-boot.enable = true;
 
+  # use ZFS
+  boot.supportedFilesystems = [ "zfs" ]
+
   networking.networkmanager.enable = true;
   networking.hostName = "sean"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -89,6 +92,8 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # docker for work stuff
+  virtualisation.docker.enable = true;
 
   # Fonts
   fonts = {
@@ -112,12 +117,15 @@
       # Good monospace fonts
       jetbrains-mono
       source-code-pro
+      # all the nerdfonts
+      nerdfonts
     ];
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.sean = {
     isNormalUser = true;
+    initialPassword = "asdf";
     home = "/home/sean";
     shell = pkgs.zsh;
     extraGroups = [ "wheel" "docker" "networkmanager" ]; # Enable ‘sudo’ for the user.
