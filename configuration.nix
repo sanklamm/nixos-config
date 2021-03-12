@@ -97,10 +97,6 @@
 
   # Fonts
   fonts = {
-    fontDir = {
-      enable = true;
-    };
-    enableGhostscriptFonts = true;
     fonts = with pkgs; [
       #corefonts # Microsoft free fonts
       inconsolata # monospaced
@@ -118,7 +114,7 @@
       jetbrains-mono
       source-code-pro
       # all the nerdfonts
-      nerdfonts
+      # nerdfonts
     ];
   };
 
@@ -151,7 +147,7 @@
     fzf
     git
     htop
-    imagemagic
+    imagemagick
     killall
     lsof
     mc
@@ -168,7 +164,7 @@
     usbutils
     wget
     youtube-dl
-    z
+    # z
     zip
     zsh
 
@@ -189,7 +185,7 @@
     networkmanager
     networkmanager-openconnect
     networkmanager-openvpn
-    networkmanager-pptp
+    # networkmanager-pptp
     networkmanager-vpnc
     nitrogen
     openvpn
@@ -200,17 +196,20 @@
     redshift
     remmina
     simplescreenrecorder
-    slack
-    spotify
+    # slack
+    # spotify
     sstp
-    steam
+    # steam
     syncthing
-    thunar
+    xfce.thunar
+    xfce.thunar-volman
+    xfce.thunar-dropbox-plugin
+    xfce.thunar-archive-plugin
     zathura
-    zoom-us
+    # zoom-us
 
     # media
-    guayadeque
+    # guayadeque
     mpd
     mpv
     ncmpcpp
@@ -235,9 +234,9 @@
     docker
     docker-compose
     jdk11
-    jetbrains.phpstorm
+    # jetbrains.phpstorm
     leiningen
-    texlive.combined.scheme-tetex
+    # texlive.combined.scheme-tetex
     yarn
 
     # graphical environment
@@ -254,7 +253,7 @@
   # };
 
   # List services that you want to enable:
-  services = {
+  # services = {
 
     # syncthing = {
     #   enable = true;
@@ -263,7 +262,7 @@
     # printServer = {
     #   enable = true;
     # };
-  }
+  # }
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
