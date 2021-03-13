@@ -59,8 +59,18 @@
 
   services.xserver = {
     enable = true;
-    windowManager.awesome.enable = true;
-    displayManager.defaultSession = "none+awesome";
+
+    displayManager = {
+      sddm.enable = true;
+      defaultSession = "none+awesome";
+    };
+
+    windowManager.awesome = {
+      enable = true;
+      luaModules = with pkgs.luaPackages; [
+        luarocks # is the package manager for Lua modules
+        luadbi-mysql # Database abstraction layer
+      ];
     desktopManager.xterm.enable = false;
     # disable automatic screen blanking and stuff, we'll do it manually instead
     # serverFlagsSection = ''
@@ -134,96 +144,95 @@
   environment.systemPackages = with pkgs; [
 
     # command line utilities
-    ag
-    bash
-    bat
-    broot
-    coreutils
-    ctags
-    curl
-    dmenu
-    exa
-    ffmpeg
-    fzf
-    git
-    htop
-    imagemagick
-    killall
-    lsof
+    # ag
+    # bash
+    # bat
+    # broot
+    # coreutils
+    # ctags
+    # curl
+    # dmenu
+    # exa
+    # ffmpeg
+    # fzf
+    # git
+    # htop
+    # imagemagick
+    # killall
+    # lsof
     mc
-    ncdu
+    # ncdu
     nix-index
-    ranger
-    ripgrep
-    rsync
-    sassc
-    stow
+    # ranger
+    # ripgrep
+    # rsync
+    # sassc
+    # stow
     tmux
     tree
     unzip
     usbutils
     wget
-    youtube-dl
+    # youtube-dl
     # z
     zip
     zsh
 
     # utilities
-    arandr
-    caffeine-ng
-    calibre
-    dropbox
-    etcher
-    feh
-    flameshot
-    font-manager
-    gimp
-    gnupg
-    gparted
-    handbrake
-    libreoffice-fresh
+    # arandr
+    # caffeine-ng
+    # calibre
+    # dropbox
+    # etcher
+    # feh
+    # flameshot
+    # font-manager
+    # gimp
+    # gnupg
+    # gparted
+    # handbrake
+    # libreoffice-fresh
     networkmanager
     networkmanager-openconnect
     networkmanager-openvpn
     # networkmanager-pptp
     networkmanager-vpnc
-    nitrogen
-    openvpn
-    peek
+    # nitrogen
+    # openvpn
+    # peek
     pptp
-    rclone
-    rclone-browser
-    redshift
-    remmina
-    simplescreenrecorder
+    # rclone
+    # rclone-browser
+    # redshift
+    # remmina
+    # simplescreenrecorder
     # slack
     # spotify
     sstp
     # steam
-    syncthing
-    xfce.thunar
-    xfce.thunar-volman
-    xfce.thunar-dropbox-plugin
-    xfce.thunar-archive-plugin
-    zathura
+    # syncthing
+    # xfce.thunar
+    # xfce.thunar-volman
+    # xfce.thunar-dropbox-plugin
+    # xfce.thunar-archive-plugin
+    # zathura
     # zoom-us
 
     # media
     # guayadeque
-    mpd
-    mpv
-    ncmpcpp
-    pavucontrol
-    vlc
+    # mpd
+    # mpv
+    # ncmpcpp
+    # pavucontrol
+    # vlc
 
     # terminals
-    # alacritty
     gnome3.gnome-terminal
     termite
 
     # editors
-    emacs
-    neovim
+    # emacs
+    # neovim
     vim
 
     # browsers
@@ -231,13 +240,13 @@
     google-chrome
 
     # programming stuff
-    docker
-    docker-compose
-    jdk11
+    # docker
+    # docker-compose
+    # jdk11
     # jetbrains.phpstorm
-    leiningen
+    # leiningen
     # texlive.combined.scheme-tetex
-    yarn
+    # yarn
 
     # graphical environment
     lightdm
