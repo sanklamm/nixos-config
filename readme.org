@@ -3,3 +3,10 @@
 
 ** General info
    This is just the first test. Let's see if I'll be getting somewhere...
+
+** Useful commands
+
+*** Hash a file/folder for fetch hashes
+    #+begin_src sh
+    nix-hash --type sha256 myfile
+    #+end_src
