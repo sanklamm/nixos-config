@@ -217,7 +217,7 @@
     vlc
 
     # terminals
-    alacritty
+    # alacritty
     gnome3.gnome-terminal
     termite
 

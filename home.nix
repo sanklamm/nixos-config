@@ -23,4 +23,11 @@
     alacritty
   ];
 
+  home.file = {
+    ".config/alacritty/alacritty.yaml".text = ''
+      env:
+        TERM: xterm-256color
+    '';
+  };
+
 }
