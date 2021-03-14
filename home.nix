@@ -28,6 +28,7 @@
     redshift
     stow
     bitwarden
+    git-crypt
 
     # command line utilities
     ag
@@ -127,10 +128,74 @@
     yarn
   ];
 
+  # Enable zsh
+  programs.zsh.enable = true;
+
+  # Enable Oh-my-zsh
+  programs.zsh.ohMyZsh = {
+    enable = true;
+    plugins = [ "git" "sudo" "docker" "kubectl" ];
+  };
+
+  programs.git = {
+    enable = true;
+    userName  = "sanklamm";
+    userEmail = "sanklamm@gmail.com";
+  };
+
+  programs.gnome-terminal = {
+    enable = true;
+    profile = { dracula }
+  };
+
+  home.file = {
+  "git-repos/dracula-gnome-terminal".source = fetchFromGitHub {
+     owner = "dracula";
+     repo = "gnome-terminal";
+     rev = "4dfebf1";
+     sha256 = "1xfax18y4ddafzmwqp8qfs6k34nh163bwjxb7llvls5hxr79vr9s"; # change this
+  };
+
   home.file = {
     ".config/alacritty/alacritty.yaml".text = ''
       env:
         TERM: xterm-256color
+      # Colors (Dracula PRO)
+      colors:
+        # Default colors
+        primary:
+          background: '0x22212c'
+          foreground: '0xf8f8f2'
+
+        cursor:
+          text: '0x454158'
+          cursor: '0xf8f8f2'
+
+        selection:
+          text: '0xf8f8f2'
+          background: '0x454158'
+
+        # Normal colors
+        normal:
+          black:   '0x22212c'
+          red:     '0xff9580'
+          green:   '0x8aff80'
+          yellow:  '0xffff80'
+          blue:    '0x9580ff'
+          magenta: '0xff80bf'
+          cyan:    '0x80ffea'
+          white:   '0xf8f8f2'
+
+        # Bright colors
+        bright:
+          black:   '0x22212c'
+          red:     '0xffaa99'
+          green:   '0xa2ff99'
+          yellow:  '0xffff99'
+          blue:    '0xaa99ff'
+          magenta: '0xff99cc'
+          cyan:    '0x99ffee'
+          white:   '0xffffff'
     '';
   };
 
